@@ -4,3 +4,4 @@ build.fxbuild
 *.classpath
 /.settings/
 /nbproject/private/
+/build/

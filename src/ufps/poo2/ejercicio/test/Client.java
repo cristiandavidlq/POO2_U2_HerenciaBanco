@@ -1,6 +1,6 @@
 package ufps.poo2.ejercicio.test;
 
-import ufps.poo2.ejercicio.banco.Bank;
+import ufps.poo2.ejercicio.banco.modelo.Bank;
 
 public class Client {
 
