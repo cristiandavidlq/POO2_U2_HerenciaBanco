@@ -52,12 +52,22 @@ public class Bank {
        if(t=='C'){
            account = new CurrentAccount(a);
            accounts.add(account);
-       }       
+       }    
+       if(t=='D'){           
+           account = new CdtAccount(a);
+           accounts.add(account);
+       }
    }
       
    public void closeAccount(int a){
         for (int i = 0; i < accounts.size(); i++) {
+            
             if (accounts.get(i).getAccountNumber() == a) {
+                Object account = accounts.get(i);
+                if(account instanceof CdtAccount){
+                    CdtAccount acc = (CdtAccount) account;                    
+                    transferirSaldo(acc.getBalance(), a);
+                }
                 accounts.remove(i);
                 
                 for (int j = i; j < accounts.size() - 1; j++) {
@@ -68,6 +78,10 @@ public class Bank {
                 return;
             }
         }
+   }
+   
+   private void transferirSaldo(double bal, int a){
+       
    }
    
    private Account findAccount(int a){
