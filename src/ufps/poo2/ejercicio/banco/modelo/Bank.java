@@ -81,7 +81,10 @@ public class Bank {
    }
    
    private void transferirSaldo(double bal, int a){
-       
+       private void transferirSaldo(double bal, int a){
+       Account cuenta= findAccount(a);
+       cuenta.deposit(bal);
+   }
    }
    
    private Account findAccount(int a){
